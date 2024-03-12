@@ -23,7 +23,27 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 )
 
 const Navbar = () => {
-  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
+
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
@@ -62,9 +82,9 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick('userProfile')}
           >
-            <img 
-            className='rounded-full w-8 h-8'
-            src={avatar} />
+            <img
+              className='rounded-full w-8 h-8'
+              src={avatar} />
             <p>
               <span
                 className='text-gray-400 text-14'>
