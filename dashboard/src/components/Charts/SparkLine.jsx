@@ -1,9 +1,11 @@
 import React from 'react';
 import { SparklineComponent, Inject, SparklineTooltip } from '@syncfusion/ej2-react-charts';
 
-const SparkLine = () => {
+const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
   return (
-    <div>SparkLine</div>
+    <SparklineComponent>
+      
+    </SparklineComponent>
   )
 }
 
