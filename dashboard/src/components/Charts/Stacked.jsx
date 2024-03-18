@@ -10,6 +10,7 @@ const Stacked = ({ width, height}) => {
     height={height}
     id='stack chart'
     primaryXAxis={stackedPrimaryXAxis}
+    primaryYAxis={stackedPrimaryYAxis}
     >
       <Inject services={[Legend, Category, StackingColumnSeries, Tooltip]}/>
     </ChartComponent>
