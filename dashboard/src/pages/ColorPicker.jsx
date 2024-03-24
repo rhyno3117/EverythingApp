@@ -5,7 +5,9 @@ import { Header } from '../components';
 
 const ColorPicker = () => {
   return (
-    <div>ColorPicker</div>
+    <div>
+      
+    </div>
   )
 }
 
