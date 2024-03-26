@@ -13,14 +13,17 @@ const ThemeSettings = () => {
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="font-semibold text-lg"> Settings </p>
           <button
-           type="button"
-           onClick={() =>{}}
-           style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
-           className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+            type="button"
+            onClick={() => { }}
+            style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
+            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
           >
-
+            <MdOutlineCancel />
           </button>
         </div>
+
+
+        
       </div>
     </div>
   )
