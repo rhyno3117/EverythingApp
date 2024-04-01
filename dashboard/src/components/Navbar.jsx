@@ -24,7 +24,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 )
 
 const Navbar = () => {
-  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { currentColor, activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize} = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -51,7 +51,7 @@ const Navbar = () => {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
 
